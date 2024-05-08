@@ -12,18 +12,17 @@ const emitter = new MyEmitter();
 
 const PORT = process.env.PORT || 3500;
 
-const serveFie = async(filePath, contentType, response) => {
-    try {
-        const data = await fsPromise.readFile(filePath, 'utf8');
-        response.writeHead(200, {'Content-Type': contentType });
-        response.end(data)
-        
-    } catch (error) {
-        console.log(error);
-        response.statusCode = 500;
-        response.end()
-    }
-}
+const serveFile = async (filePath, contentType, response) => {
+  try {
+    const data = await fsPromise.readFile(filePath, "utf8");
+    response.writeHead(200, { "Content-Type": contentType });
+    response.end(data);
+  } catch (error) {
+    console.log(error);
+    response.statusCode = 500;
+    response.end();
+  }
+};
 
 const server = http.createServer((req, res) => {
   console.log(req.url, req.method);
@@ -59,31 +58,53 @@ const server = http.createServer((req, res) => {
 
   if (contentType === "text/html" && req.url === "/") {
     filePath = path.join(__dirname, "views", "index.html");
+
+    //Users/user/desktop/my web/nodejs/lesson-4 => directory = _dirname
+    //views
+    //index.html
+
+    //whenever someone inputs '/' as the url
+    //the file path = Users/user/desktop/my web/nodejs/lesson-4/views/index.html
   } else if (contentType === "text/html" && req.url.slice(-1) === "/") {
     filePath = path.join(__dirname, "views", req.url);
+
+    //Users/user/desktop/my web/nodejs/lesson-4 => directory = _dirname
+    //views
+    //req.url when the '/' is the last character like '/old/' or '/me/'
+    //the file path = Users/user/desktop/my web/nodejs/lesson-4/views/me
+
   } else if (contentType === "text/html") {
     filePath = path.join(__dirname, "views", req.url);
   } else {
     filePath = path.join(__dirname, req.url);
   }
 
+  console.log(filePath);
 
-  if(!extension && req.url.slice(-1) !== '/') filePath += '.html';
+  if (!extension && req.url.slice(-1) !== "/") filePath += ".html";
+    //the file path = Users/user/desktop/my web/nodejs/lesson-4/views/me.html or the file path = Users/user/desktop/my web/nodejs/lesson-4/views/me/
+    
+  const fileExists = fs.existsSync(filePath);
+  //the file path = Users/user/desktop/my web/nodejs/lesson-4/views/me.html or the file path = Users/user/desktop/my web/nodejs/lesson-4/views/me.html is created
+  //it checks our computer to see if this path is in the computer
 
-  const fileExists = fs.existsSync(filePath)
+  if (fileExists) {
+    serveFile(filePath, contentType, res);
+    //if the filepath exists
+    //now serve the everythingv about that file to the client side
 
-  if(fileExists) {
-
-  }else {
-    switch(path.parse(filePath).base){
-        case 'old-page.html': 
-            res.writeHead(301, {"Location": '/new-page.html'});
-            break
-        case 'www-page.hmtl':
-            res.writeHead(301, {"Location": '/'});
-            res.end();
-            break
-        default:
+  } else {
+    switch (path.parse(filePath).base) {
+      case "old-page.html":
+        // writeHead is a method used to write the HTTP response headers for an HTTP response. 
+        res.writeHead(301, { Location: "/new-page.html" });
+        break;
+      case "www-page.html":
+        res.writeHead(301, { Location: "/" }); 
+        res.end();
+        break;
+      default:
+        serveFile(path.join(__dirname, "views", "404.html"), "text/html", res);
     }
   }
 });
