@@ -1,21 +1,19 @@
 {
-  "name": "npm-package",
+  "name": "task",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon index",
     "start": "node index"
   },
-  "author": "Hayzed",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "date-fns": "^3.6.0",
-    "express": "^4.19.2",
-    "uuid": "^9.0.1"
-  },
   "devDependencies": {
     "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }
