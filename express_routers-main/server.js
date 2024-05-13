@@ -4,6 +4,11 @@ const path = require('path');
 const cors = require('cors');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
+const rootRoute = require("./routes/root");
+const subdirRoute = require("./routes/subdir");
+const employeeRoute = require("./routes/api/employee")
+
+
 const PORT = process.env.PORT || 3500;
 
 // custom middleware logger
@@ -33,8 +38,11 @@ app.use(express.json());
 
 //serve static files
 app.use('/', express.static(path.join(__dirname, '/public')));
+app.use('/subdir', express.static(path.join(__dirname, '/public')));
 
-
+app.use("/", rootRoute);
+app.use("/subdir", subdirRoute);
+app.use("/employee", employeeRoute);
 
 app.all('*', (req, res) => {
     res.status(404);
