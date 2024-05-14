@@ -1,0 +1,22 @@
+[
+    {
+        "id" : 1,
+        "firstname" : "Naheem",
+        "lastname" : "Oloyede",
+        "role" : "Team Lead"
+    },
+
+    {
+        "id" : 2,
+        "firstname" : "Aliyu",
+        "lastname" : "Ibraheem",
+        "role" : "Software Engineer"
+    },
+
+    {
+        "id" : 3,
+        "firstname" : "Soliu",
+        "lastname" : "Ahmad",
+        "role" : "Tutor"
+    }
+]
