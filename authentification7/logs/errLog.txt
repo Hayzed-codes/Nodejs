@@ -1,0 +1,1 @@
+20240513	12:52:14	6bebefb0-3768-449c-a094-cf0975f8ee8e	TypeError: data.find is not a function
