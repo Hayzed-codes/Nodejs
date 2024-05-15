@@ -35,7 +35,7 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 app.use("/", rootRoute);
 app.use("/register", require("./routes/api/register"))
 app.use('/auth', require("./routes/api/auth"))
-app.use('/refresh', require("./routes/api/refresh"))
+app.use('/refresh', require("./routes/refresh"))
 
 
 app.use(verifyJWT)

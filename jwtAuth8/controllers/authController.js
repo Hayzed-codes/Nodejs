@@ -28,12 +28,12 @@ const handleLogin = async (req, res) => {
   if (match) {
     // Create JWTs
     const accessToken = jwt.sign(
-      { "user": foundUser.username },
+      { "username": foundUser.username },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "60s" }
     );
     const refreshToken = jwt.sign(
-      { "user": foundUser.username },
+      { "username": foundUser.username },
       process.env.REFRESH_TOKEN_SECRET,
       { expiresIn: "1d" }
     );
