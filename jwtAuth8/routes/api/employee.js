@@ -12,7 +12,7 @@ const path = require("path");
 
 router
     .route("/")
-    .get(verifyJWT.employeesController.getAllEmployees)
+    .get(verifyJWT, employeesController.getAllEmployees)
     .get(employeesController.getAllEmployees)
     .post(employeesController.createNewEmployee)
     .put(employeesController.updateEmployee)

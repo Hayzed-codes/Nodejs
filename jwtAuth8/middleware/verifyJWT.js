@@ -3,9 +3,13 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const verifyJWT = async (req, res, next) => {
-    const authHeader = req.headers["Authorized"]
+    const authHeader = req.headers["authorization"]
+
     if (!authHeader) return res.sendStatus (401);
     console.log(authHeader); // Bearer
+
+    const token = authHeader.split(" ")[1]
+
     jwt.verify(
         token,
         process.env.ACCESS_TOKEN_SECRET,
@@ -17,4 +21,4 @@ const verifyJWT = async (req, res, next) => {
     )
 }
 
-module.exports = verifyJWT
+module.exports = verifyJWT;

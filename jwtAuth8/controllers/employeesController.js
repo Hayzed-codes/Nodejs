@@ -45,7 +45,7 @@ const updateEmployee = (req, res) => {
     const unsortedArray = [...filteredEmployee, employee]
 
     data.setEmployee(
-        unsortedArray.sort((a,b) => (a.id > b.id ? 1 : a.id < b.id ? -1 : 0))
+        unsortedArray.sort((a,b) => (a.id > b.id ? 1 : a.id < b.id ? 1 : 0))
     )
 
     res.json(data.employees)
