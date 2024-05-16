@@ -39,6 +39,7 @@ const handleLogin = async (req, res) => {
     );
 
     const otherUsers = usersDB.users.filter(
+      // === foundUser.username
       person => person.username !== foundUser.username
     );
     const currentUser = { ...foundUser, refreshToken };

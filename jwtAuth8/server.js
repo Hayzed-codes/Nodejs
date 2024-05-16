@@ -33,9 +33,10 @@ app.use(cookieParser())
 app.use('/', express.static(path.join(__dirname, '/public')));
 
 app.use("/", rootRoute);
-app.use("/register", require("./routes/api/register"))
-app.use('/auth', require("./routes/api/auth"))
-app.use('/refresh', require("./routes/refresh"))
+app.use("/register", require("./routes/api/register"))  // Register an employee
+app.use('/auth', require("./routes/api/auth")) // Authenticate the login
+app.use('/refresh', require("./routes/refresh")) // Refresh
+app.use('/logout', require("./routes/api/logout")) // Authenticate the login
 
 
 app.use(verifyJWT)
