@@ -1,0 +1,22 @@
+20231009	17:14:15	9036c250-0876-43fe-b283-2bba272e5f29	Error: not allowed by CORs
+20231009	17:14:15	18ac9577-43ec-4e8d-856d-0b9cf571afb8	Error: not allowed by CORs
+20231010	12:59:45	c60460bd-ed9d-425e-86ad-9ab23e513398	Error: ENOENT: no such file or directory, stat 'C:\Users\aaa\OneDrive\Desktop\my-mWeb\Node Js Courses\Lesson 8\Routes\views\index.html'
+20231010	12:59:45	02bb0592-6d24-4ecc-9bbc-868161cee8b9	Error: ENOENT: no such file or directory, stat 'C:\Users\aaa\OneDrive\Desktop\my-mWeb\Node Js Courses\Lesson 8\Routes\views\index.html'
+20231010	12:59:51	154aea67-1b46-48b8-89c0-f4559fc379cb	Error: ENOENT: no such file or directory, stat 'C:\Users\aaa\OneDrive\Desktop\my-mWeb\Node Js Courses\Lesson 8\Routes\views\new-page.html'
+20231010	14:05:23	bf9205ed-5505-48f1-b735-f9aefa98df23	Error: ENOENT: no such file or directory, stat 'C:\Users\aaa\OneDrive\Desktop\my-mWeb\Node Js Courses\Lesson 8\Routes\views\new-page.html'
+20231010	16:27:13	5a1a064c-f7ad-4f2f-98c3-954437a7a8bc	SyntaxError: Unexpected token } in JSON at position 16
+20231011	11:55:44	92cf6f81-ddac-411a-8780-c023d94fc0bb	TypeError: res.status.status is not a function
+20231011	11:55:56	ea89c469-d45a-4328-998d-88d123620598	TypeError: res.status.status is not a function
+20231011	12:47:20	3342aff4-ed16-406c-8b4e-041d6b0f3081	TypeError: Cannot read properties of undefined (reading 'id')
+20231011	12:49:42	ec4061ab-a642-414d-af8a-b0bb6b8e463f	TypeError: Cannot read properties of undefined (reading 'id')
+20231011	12:53:25	fc29dd88-c217-409c-8219-2890e29d1f00	TypeError: Cannot read properties of undefined (reading 'id')
+20231011	12:53:55	c422c0c7-086b-47e2-9a77-33bc3b8a6a7a	TypeError: Cannot read properties of undefined (reading 'id')
+20231011	12:54:07	35700f23-6072-44c0-b259-7f5b3e18543a	TypeError: Cannot read properties of undefined (reading 'id')
+20231011	12:55:35	504307dd-ea19-408c-9fe9-5b84daba4bad	TypeError: Cannot read properties of undefined (reading 'id')
+20231013	11:52:31	2d874c4a-16f4-4906-b987-72649054c9ec	JsonWebTokenError: jwt malformed
+20231013	11:55:01	4fcdddd4-21de-44b7-baf3-3d90b8ffc84c	JsonWebTokenError: jwt malformed
+20231013	11:55:05	3e971789-c51c-4936-a237-dbd34ae69a08	JsonWebTokenError: jwt malformed
+20231013	11:56:08	5203c015-d00c-46f9-8e50-9c9c4d2500a9	JsonWebTokenError: jwt malformed
+20231013	11:58:24	9c279fb6-eb92-4839-951a-09ebc6813621	JsonWebTokenError: jwt malformed
+20231013	12:00:29	21f83da2-a4ca-44c0-b58b-dbd995b039a6	JsonWebTokenError: verify must be called asynchronous if secret or public key is provided as a callback
+20231013	12:01:01	4c8d583b-4498-415f-8c69-26c76c044393	JsonWebTokenError: verify must be called asynchronous if secret or public key is provided as a callback

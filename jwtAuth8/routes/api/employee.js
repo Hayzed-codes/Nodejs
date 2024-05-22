@@ -1,17 +1,18 @@
 const express = require("express");
-const router = express.Router(); 
+const router = express.Router();
 const employeesController = require("../../controllers/employeesController")
-// const verifyJWT = require("../../middleware/verifyJWT")
+const ROLES_LIST = require('../../config/roles_list');
+const verifyRoles = require('../../middleware/verifyRoles')
+const verifyJWT = require('../../middleware/verifyJWT')
 
 
 
 router
     .route("/")
     .get(employeesController.getAllEmployees)
-    .get(employeesController.getAllEmployees)
-    .post(employeesController.createNewEmployee)
-    .put(employeesController.updateEmployee)
-    .delete(employeesController.deleteEmployee)
+    .post(verifyJWT, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor), employeesController.createNewEmployee)
+    .put(verifyJWT, verifyRoles(ROLES_LIST.Admin, ROLES_LIST.Editor),employeesController.updateEmployee)
+    .delete(verifyJWT, verifyRoles(ROLES_LIST.Admin),employeesController.deleteEmployee)
 
     router.route("/:id").get(employeesController.getEmployee)
 
